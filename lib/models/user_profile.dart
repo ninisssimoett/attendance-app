@@ -12,7 +12,8 @@ class UserProfile {
       id: json['id'] as String,
       email: json['email'] as String,
       fullName: json['full_name'] as String,
-      createdAt: DateTime.parse(json['created_at'] as String)
+      createdAt: DateTime.parse(json['created_at'] as String) 
+      //parse -> konfersi tipe data krn DateTime itu int, jd dia di parse terus jadi string
     );
   }
 }

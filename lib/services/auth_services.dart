@@ -8,8 +8,10 @@ class AuthServices {
   AuthServices() {
     if (!kIsWeb) { // only for android or ios => bukan utk web
       FirebaseAuth.instance.setSettings(
+        // memastikan kalo kita bukan robot -> captcha
         appVerificationDisabledForTesting: true,
         forceRecaptchaFlow: false,
+        
       );
     }
   }
@@ -22,7 +24,8 @@ class AuthServices {
 
   //sign in with email and password tipe data: future function :SWRAP parameter: yg didalemnya
   Future<UserCredential> signInWithEmailAndPassword(String email, String password) async{
-    // async => buat ngecek emailnya tu udah ada di database apa belum
+    // async => buat ngecek email dan passwordnya tu udah ada di database apa belum
+    // frontend dan backend kita bekerja sama
     try {
       // kalo succes masuk ke database
       return await _auth.signInWithEmailAndPassword(
