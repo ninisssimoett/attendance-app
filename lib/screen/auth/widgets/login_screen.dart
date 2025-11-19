@@ -54,6 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
       logoIcon: Icons.calendar_today_rounded,
       title: 'Welcome Back',
       subtitle: 'Login to continue',
+      
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -74,20 +75,21 @@ class _LoginScreenState extends State<LoginScreen> {
                       obscureText: false,
                       icon: Icons.email_outlined,
                       keyboardType: TextInputType.emailAddress,
-                      validator: (value) => value?.isEmpty ?? true ? 'Please enter your email' : null, // value tidak boleh kosong, kalo kosong enter ur email
+                      validator: (value) => value?.isEmpty ?? true ? 'Please enter your email' : null ,
                     ),
                     SizedBox(height: 16),
 
                     AuthTextField(
                       controller: _passwordController,
                       label: 'Password',
+                      icon: Icons.lock_outline,
                       obscureText: _obscurePassword,
                       suffixIcon: IconButton(
                         icon: Icon(
                           _obscurePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,
                           color: Colors.blue[600],
                         ),
-                        onPressed: () => setState(() => _obscurePassword = !_obscurePassword), 
+                        onPressed: () => setState(() => _obscurePassword = !_obscurePassword),
                       ),
                       validator: (value) => value?.isEmpty ?? true ? 'Please enter your password' : null,
                     ),
