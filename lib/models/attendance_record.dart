@@ -50,4 +50,12 @@ class AttendanceRecord {
       'check_out_photo_path': checkOutPhotoPath,
     };
   }
+
+  // total semua check in check out
+  Duration? get totalHours {
+    if (checkOutTime == null) return null;
+    
+    // selisih antara check in dan check out
+    return checkOutTime!.difference(checkInTime);
+  }
 }
