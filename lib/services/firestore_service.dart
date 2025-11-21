@@ -70,5 +70,9 @@ class FirestoreService {
         );
   }
 
+  Future<void> createAttendanceRecord(AttendanceRecord record) async {}
+
+  Future<void> uploadAttendanceRecord(AttendanceRecord updateRecord) async {}
+
 
 }
